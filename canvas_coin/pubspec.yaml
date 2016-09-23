@@ -1,0 +1,6 @@
+name: canvas_coin
+version: 0.0.1
+description: Sample canvas coin
+
+dependencies:
+  browser: any
