@@ -3,7 +3,7 @@ import 'dart:html';
 class CanvasApp {
   CanvasElement canvas;
   CanvasRenderingContext2D context;
-  ImageElement blueCoinImage = new ImageElement(src: '/images/blue_coin.png');
+  ImageElement blueCoinImage = new ImageElement(src: './images/blue_coin.png');
 
   CanvasApp() {
       canvas = querySelector('#coinAnimation');
@@ -44,6 +44,10 @@ class CanvasApp {
     ..fillRect(0, 0, canvas.width, canvas.height);
   }
 
+  String sizeScreen() {
+    return '${window.innerWidth}, ${window.innerHeight}';
+  }
+
   void blueCoin() {
     context.drawImageScaledFromSource(
       blueCoinImage, frameIndex*100, 0, 100, 100, 0, 0, 100, 100
@@ -54,4 +58,6 @@ class CanvasApp {
 void main() {
   var canvasApp = new CanvasApp();
   canvasApp.run();
+  DivElement showSizeScreen = querySelector('#sizeScreen');
+  showSizeScreen.text = canvasApp.sizeScreen();
 }

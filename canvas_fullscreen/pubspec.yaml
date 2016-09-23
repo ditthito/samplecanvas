@@ -1,0 +1,6 @@
+name: canvas_fullscreen
+version: 0.0.1
+description: Sample canvas resize fullscreen
+
+dependencies:
+  browser: any
